@@ -6,8 +6,8 @@ import { loginAction } from "../../redux/slices/users/usersSlices";
 const Login = () => {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
-    password: "",
-    username: "",
+    password: "12345",
+    username: "seyit",
   });
 
   //handle form change
