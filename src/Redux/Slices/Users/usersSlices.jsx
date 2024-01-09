@@ -1,7 +1,13 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import {
+  resetErrorAction,
+  resetSuccesAction,
+} from "../globalSlice/globalSlice";
+import BASE_URL from "../../../utils/baseURL";
 
-//initalstate
+//initialstate
+
 const INITIAL_STATE = {
   loading: false,
   error: null,
@@ -31,13 +37,40 @@ export const loginAction = createAsyncThunk(
   async (payload, { rejectWithValue, getState, dispatch }) => {
     //make request
     try {
-      const respone = await axios.post(
-        `http://localhost:5000/api/users/login`,
-        payload
-      );
-      return respone;
+      const { data } = await axios.post(`${BASE_URL}/users/login`, payload);
+      //! save the user into localstorage
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      return data;
     } catch (error) {
-      return rejectWithValue(error?.response?.respone);
+      return rejectWithValue(error?.response?.data);
     }
   }
 );
+
+//! Users slices
+const usersSlice = createSlice({
+  name: "users",
+  initialState: INITIAL_STATE,
+  extraReducers: (builder) => {
+    //Login
+    builder.addCase(loginAction.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(loginAction.fulfilled, (state, action) => {
+      state.userAuth.userInfo = action.payload;
+      state.isLogin = true;
+      state.loading = false;
+      state.error = null;
+    });
+    builder.addCase(loginAction.rejected, (state, action) => {
+      state.error = action.payload;
+      state.loading = false;
+      state.isLogin = false;
+    });
+  },
+});
+
+//! generate reducer
+const usersReducer = usersSlice.reducer;
+
+export default usersReducer;
