@@ -1,0 +1,1 @@
+INITIAL_STATE : bu alan constructer gibi sayfa yüklendiginde ilk çalışan alandır ve kullanıcı hakkında bir bilgi erişmek için Redux kullanarak bilgileri buradan alırız.
