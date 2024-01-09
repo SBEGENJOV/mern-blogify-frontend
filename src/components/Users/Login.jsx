@@ -1,9 +1,15 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { loginAction } from "../../redux/slices/users/usersSlices";
+import LoadingComponent from "../Alert/LoadingComponent";
+import ErrorMsg from "../Alert/ErrorMsg";
+import SuccesMsg from "../Alert/SuccesMsg";
 
 const Login = () => {
+  //! Nvaigation hook
+  const navigate = useNavigate();
+  //! Dispatch hook
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     password: "12345",
@@ -31,16 +37,41 @@ const Login = () => {
       username: "",
     });
   };
+  //store data
+  const { userAuth, loading, error, isLogin } = useSelector(
+    (state) => state?.users
+  );
+
+  //Rediret if token expired
+  useEffect(() => {
+    if (error?.message === "Token expired/Invalid") {
+      navigate("/login");
+    }
+  }, [error?.message]);
+
+  //! Redirect
+  useEffect(() => {
+    if (
+      userAuth?.userInfo?.token &&
+      error?.message !== "Token expired/Invalid"
+    ) {
+      navigate("/user-profile");
+    }
+  }, [userAuth?.userInfo?.token]);
   return (
     <section className="py-16 xl:pb-56 bg-white overflow-hidden">
       <div className="container px-4 mx-auto">
         <div className="text-center max-w-md mx-auto">
           <h2 className="mb-4 text-6xl md:text-7xl text-center font-bold font-heading tracking-px-n leading-tight">
-            Login to your account
+            Login to your account 
           </h2>
           <p className="mb-12 font-medium text-lg text-gray-600 leading-normal">
             Enter your details below.
           </p>
+          {/* Display error */}
+          {error && <ErrorMsg message={error?.message} />}
+          {/* success message */}
+          {isLogin && <SuccesMsg message="Login Success" />}
           <form onSubmit={handleSubmit}>
             <label className="block mb-5">
               <input
@@ -65,12 +96,16 @@ const Login = () => {
                 onChange={handleChange}
               />
             </label>
-            <button
-              className="mb-8 py-4 px-9 w-full text-white font-semibold border border-indigo-700 rounded-xl shadow-4xl focus:ring focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-200"
-              type="submit"
-            >
-              Login Account
-            </button>
+            {loading ? (
+              <LoadingComponent />
+            ) : (
+              <button
+                className="mb-8 py-4 px-9 w-full text-white font-semibold border border-indigo-700 rounded-xl shadow-4xl focus:ring focus:ring-indigo-300 bg-indigo-600 hover:bg-indigo-700 transition ease-in-out duration-200"
+                type="submit"
+              >
+                Login Account
+              </button>
+            )}
 
             <p className="font-medium">
               <span className="m-2">Forgot Password?</span>
