@@ -1,3 +1,5 @@
+import RegisterTemplate from "../../Templates/RegisterTemplate";
+
 const Homepage = () => {
   return (
     <div>
@@ -66,6 +68,7 @@ const Homepage = () => {
                 </ul>
               </div>
               {/* Register Form */}
+              <RegisterTemplate />
             </div>
           </div>
         </div>
