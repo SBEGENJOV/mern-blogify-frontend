@@ -1,10 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import {
-  resetErrorAction,
-  resetSuccesAction,
-} from "../globalSlice/globalSlice";
-import BASE_URL from "../../../utils/baseURL";
 
 //initialstate
 
@@ -37,7 +32,10 @@ export const loginAction = createAsyncThunk(
   async (payload, { rejectWithValue, getState, dispatch }) => {
     //make request
     try {
-      const { data } = await axios.post(`${BASE_URL}/users/login`, payload);
+      const { data } = await axios.post(
+        `https://blogify-api-v1-wo4n.onrender.com/users/login`,
+        payload
+      );
       //! save the user into localstorage
       localStorage.setItem("userInfo", JSON.stringify(data));
       return data;
