@@ -1,4 +1,4 @@
-import RegisterTemplate from "../../Templates/RegisterTemplate";
+import RegisterTemplate from "../Users/Register";
 
 const Homepage = () => {
   return (

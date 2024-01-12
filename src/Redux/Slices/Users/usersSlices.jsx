@@ -1,5 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import {
+  resetErrorAction,
+  resetSuccesAction,
+} from "../globalSlice/globalSlice";
 
 //initialstate
 
@@ -52,6 +56,23 @@ export const logoutAction = createAsyncThunk("users/logout", async () => {
   return true;
 });
 
+//! Kayıt ol kodu
+export const registerAction = createAsyncThunk(
+  "users/register",
+  async (payload, { rejectWithValue, getState, dispatch }) => {
+    //make request
+    try {
+      const { data } = await axios.post(
+        `https://blogify-api-v1-wo4n.onrender.com/users/register`,
+        payload
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data);
+    }
+  }
+);
+
 //! Users slices
 const usersSlice = createSlice({
   name: "users",
@@ -71,6 +92,32 @@ const usersSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
       state.isLogin = false;
+    });
+
+    //! Register
+    builder.addCase(registerAction.pending, (state, action) => {
+      state.loading = true;
+    });
+    //handle fulfilled state
+    builder.addCase(registerAction.fulfilled, (state, action) => {
+      state.user = action.payload;
+      state.isRegistered = true;
+      state.loading = false;
+      state.error = null;
+    });
+    //* Handle the rejection
+    builder.addCase(registerAction.rejected, (state, action) => {
+      state.error = action.payload;
+      state.loading = false;
+      state.isRegistered = false;
+    });
+    //! Reset error action
+    builder.addCase(resetErrorAction.fulfilled, (state) => {
+      state.error = null;
+    });
+    //! Reset success action
+    builder.addCase(resetSuccesAction.fulfilled, (state) => {
+      state.success = false;
     });
   },
 });

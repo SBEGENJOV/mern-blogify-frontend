@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 import { FaBlog } from "react-icons/fa";
-import { logoutAction } from "../../Redux/Slices/Users/usersSlices";
+import { logoutAction } from "../../Redux/Slices/users/usersSlices";
 import { useDispatch, useSelector } from "react-redux";
 
 function classNames(...classes) {

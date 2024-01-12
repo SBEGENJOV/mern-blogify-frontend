@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { loginAction } from "../../redux/slices/users/usersSlices";
+import { loginAction } from "../../Redux/Slices/users/usersSlices";
 import LoadingComponent from "../Alert/LoadingComponent";
 import ErrorMsg from "../Alert/ErrorMsg";
 import SuccesMsg from "../Alert/SuccesMsg";
@@ -63,7 +63,7 @@ const Login = () => {
       <div className="container px-4 mx-auto">
         <div className="text-center max-w-md mx-auto">
           <h2 className="mb-4 text-6xl md:text-7xl text-center font-bold font-heading tracking-px-n leading-tight">
-            Login to your account 
+            Login to your account
           </h2>
           <p className="mb-12 font-medium text-lg text-gray-600 leading-normal">
             Enter your details below.
