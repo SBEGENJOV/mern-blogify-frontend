@@ -45,6 +45,13 @@ export const loginAction = createAsyncThunk(
   }
 );
 
+// ! Çıkış kodu
+export const logoutAction = createAsyncThunk("users/logout", async () => {
+  //localstorage'den token silme
+  localStorage.removeItem("userInfo");
+  return true;
+});
+
 //! Users slices
 const usersSlice = createSlice({
   name: "users",

@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 import { FaBlog } from "react-icons/fa";
-import { loginAction } from "../../Redux/Slices/Users/usersSlices.jsx";
+import { logoutAction } from "../../Redux/Slices/Users/usersSlices";
 import { useDispatch, useSelector } from "react-redux";
 
 function classNames(...classes) {
@@ -12,12 +12,12 @@ function classNames(...classes) {
 }
 
 export default function PrivateNavbar() {
-  const { userAuth } = useSelector((state) => state?.users);
+  const { profile, userAuth } = useSelector((state) => state?.users);
   //!dispatch
   const dispatch = useDispatch();
   const logoutHandler = () => {
-    dispatch(loginAction());
-    //reload
+    dispatch(logoutAction());
+    //Sayfayı yenileme
     window.location.reload();
   };
   return (
