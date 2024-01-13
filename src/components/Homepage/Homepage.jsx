@@ -1,3 +1,4 @@
+import PublicPosts from "../Posts/PublicPosts";
 import RegisterTemplate from "../Users/Register";
 
 const Homepage = () => {
@@ -73,6 +74,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+      <PublicPosts/>
     </div>
   );
 };

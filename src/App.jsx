@@ -6,6 +6,7 @@ import PublicNavbar from "./components/Navbar/PublicNavbar";
 import PrivateNavbar from "./components/Navbar/PrivateNavbar";
 import { useSelector } from "react-redux";
 import ProctedRoute from "./components/AuthRoute/ProctedRoute";
+import PublicPosts from "./components/Posts/PublicPosts";
 
 export default function App() {
   const { userAuth } = useSelector((state) => state?.users);
@@ -16,6 +17,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        {/* Public yazılar */}
+        <Route path="/public-posts" element={<PublicPosts />}></Route>
+        {/* Profil yönlendirmeleri */}
         <Route path="/user-profile" element={<ProctedRoute>
           <UserProfile/>
         </ProctedRoute>}></Route>
