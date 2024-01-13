@@ -172,7 +172,7 @@ const PostStats = ({
 export default PostStats;
 
 PostStats.propTypes = {
-  views: PropTypes.number,
+  views: PropTypes.array,
   likes: PropTypes.number,
   dislikes: PropTypes.number,
   totalComments: PropTypes.number,
