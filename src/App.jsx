@@ -7,6 +7,7 @@ import PrivateNavbar from "./components/Navbar/PrivateNavbar";
 import { useSelector } from "react-redux";
 import ProctedRoute from "./components/AuthRoute/ProctedRoute";
 import PublicPosts from "./components/Posts/PublicPosts";
+import AddPost from "./components/Posts/AddPost";
 
 export default function App() {
   const { userAuth } = useSelector((state) => state?.users);
@@ -19,10 +20,24 @@ export default function App() {
         <Route path="/login" element={<Login />}></Route>
         {/* Public yazılar */}
         <Route path="/public-posts" element={<PublicPosts />}></Route>
+        {/* add post */}
+        <Route
+          path="/add-post"
+          element={
+            <ProctedRoute>
+              <AddPost />
+            </ProctedRoute>
+          }
+        ></Route>
         {/* Profil yönlendirmeleri */}
-        <Route path="/user-profile" element={<ProctedRoute>
-          <UserProfile/>
-        </ProctedRoute>}></Route>
+        <Route
+          path="/user-profile"
+          element={
+            <ProctedRoute>
+              <UserProfile />
+            </ProctedRoute>
+          }
+        ></Route>
       </Routes>
     </BrowserRouter>
   );
