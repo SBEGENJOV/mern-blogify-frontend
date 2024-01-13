@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPublicPostsAction } from "../../redux/slices/posts/postsSlice";
 import LoadingComponent from "../Alert/LoadingComponent";
 import { Link } from "react-router-dom";
+import truncatePost from "../../utils/truncatePost";
 import Warning from "../Alert/Warning";
 
 const PublicPosts = () => {
@@ -18,19 +19,12 @@ const PublicPosts = () => {
   useEffect(() => {
     dispatch(fetchPublicPostsAction());
   }, [dispatch]);
+
   return (
     <>
       <div>
         <section className="relative py-24 bg-white">
-          <div
-            className="absolute top-0 left-0 w-full h-full"
-            style={{
-              backgroundImage:
-                'url("flex-ui-assets/elements/pattern-white.svg")',
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "left top",
-            }}
-          />
+          <div className="absolute top-0 left-0 w-full h-full" />
           <div className="container relative z-10 px-4 mx-auto">
             <div className="md:max-w-5xl mx-auto mb-8 md:mb-16 text-center">
               <span className="inline-block py-px px-2 mb-4 text-xs leading-5 text-green-500 bg-green-100 font-medium uppercase rounded-full shadow-sm">
@@ -82,7 +76,10 @@ const PublicPosts = () => {
                         >
                           {post?.title}
                         </a>
-                        <p className="mb-4 text-coolGray-500"> </p>
+                        <p className="mb-4 text-coolGray-500">
+                          {" "}
+                          {truncatePost(post?.content)}
+                        </p>
                         <Link
                           className="inline-flex items-center text-base md:text-lg text-green-500 hover:text-green-600 font-semibold"
                           to={`/posts/${post?._id}`}
