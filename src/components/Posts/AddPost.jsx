@@ -39,10 +39,10 @@ const AddPost = () => {
   //1. Validate form
   const validateForm = (data) => {
     let errors = {};
-    if (!data.title) errors.title = "Title is required";
-    if (!data.image) errors.image = "Image is required";
-    if (!data.category) errors.category = "Category is required";
-    if (!data.content) errors.content = "Content is required";
+    if (!data.title) errors.title = "Başlık gerekli";
+    if (!data.image) errors.image = "Resim gerekli";
+    if (!data.category) errors.category = "Kategori gerekli";
+    if (!data.content) errors.content = "İçerik gerekli";
     return errors;
   };
 
@@ -90,7 +90,7 @@ const AddPost = () => {
           </h2>
           {/* error */}
           {error && <ErrorMsg message={error?.message} />}
-          {success && <SuccesMsg message="Post created successfully" />}
+          {success && <SuccesMsg message="Gönderi başarıyla oluşturuldu" />}
           <h3 className="mb-7 text-base md:text-lg text-coolGray-500 font-medium text-center">
             Share your thoughts and ideas with the community
           </h3>

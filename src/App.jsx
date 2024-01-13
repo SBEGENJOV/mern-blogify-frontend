@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import ProctedRoute from "./components/AuthRoute/ProctedRoute";
 import PublicPosts from "./components/Posts/PublicPosts";
 import AddPost from "./components/Posts/AddPost";
+import PostDetails from "./components/Posts/PostDetails";
 
 export default function App() {
   const { userAuth } = useSelector((state) => state?.users);
@@ -26,6 +27,15 @@ export default function App() {
           element={
             <ProctedRoute>
               <AddPost />
+            </ProctedRoute>
+          }
+        ></Route>
+        {/* post details */}
+        <Route
+          path="/posts/:postId"
+          element={
+            <ProctedRoute>
+              <PostDetails />
             </ProctedRoute>
           }
         ></Route>
