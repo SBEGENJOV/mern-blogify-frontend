@@ -11,6 +11,7 @@ import AddPost from "./components/Posts/AddPost";
 import PostDetails from "./components/Posts/PostDetails";
 import PostLists from "./components/Posts/PostLists";
 import UpdatePost from "./components/Posts/UpdatePost";
+import Register from "./components/Users/Register";
 
 export default function App() {
   const { userAuth } = useSelector((state) => state?.users);
@@ -21,6 +22,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
         {/* Public yazılar */}
         <Route path="/public-posts" element={<PublicPosts />}></Route>
         {/* add post */}

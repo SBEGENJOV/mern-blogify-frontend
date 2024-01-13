@@ -75,13 +75,12 @@ export default function UserProfile() {
                           className="inline-flex justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                         >
                           <svg
-                            className="-ml-0.5 h-5 w-5 text-gray-400"
+                            className="-ml-0.5 h-5 w-5 w-6 h-6 text-gray-400"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth="1.5"
                             stroke="currentColor"
-                            className="w-6 h-6"
                           >
                             <path
                               strokeLinecap="round"
@@ -102,13 +101,10 @@ export default function UserProfile() {
                           className="inline-flex justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                         >
                           <svg
-                            className="-ml-0.5 h-5 w-5 text-gray-400"
+                            className="-ml-0.5 h-5 w-5 w-6 h-6 text-gray-400"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            className="w-6 h-6"
                           >
                             <path
                               strokeLinecap="round"
@@ -124,13 +120,12 @@ export default function UserProfile() {
                           className="inline-flex justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                         >
                           <svg
-                            className="-ml-0.5 h-5 w-5 text-gray-400"
+                            className="-ml-0.5 h-5 w-5 w-6 h-6 text-gray-400"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth="1.5"
                             stroke="currentColor"
-                            className="w-6 h-6"
                           >
                             <path
                               strokeLinecap="round"
@@ -147,13 +142,12 @@ export default function UserProfile() {
                           className="inline-flex justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                         >
                           <svg
-                            className="-ml-0.5 h-5 w-5 text-gray-400"
+                            className="-ml-0.5 h-5 w-5 w-6 h-6 text-gray-400"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth="1.5"
                             stroke="currentColor"
-                            className="w-6 h-6"
                           >
                             <path
                               strokeLinecap="round"
@@ -169,13 +163,12 @@ export default function UserProfile() {
                           className="inline-flex justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                         >
                           <svg
-                            className="-ml-0.5 h-5 w-5 text-gray-400"
+                            className="-ml-0.5 h-5 w-5 text-gray-400 w-6 h-6"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth="1.5"
                             stroke="currentColor"
-                            className="w-6 h-6"
                           >
                             <path
                               strokeLinecap="round"
