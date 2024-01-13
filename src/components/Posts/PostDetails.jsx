@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import {
   deletePostAction,
   getPostAction,
-  posViewsCounttAction,
+  // posViewsCounttAction,
 } from "../../redux/slices/posts/postsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate, Link } from "react-router-dom";
@@ -16,9 +16,7 @@ const PostDetails = () => {
   const navigate = useNavigate();
   //! redux store
   const dispatch = useDispatch();
-  const { post, error, loading, success } = useSelector(
-    (state) => state?.posts
-  );
+  const { post, error, success } = useSelector((state) => state?.posts);
 
   //! get the login user
   const { userAuth } = useSelector((state) => state?.users);
@@ -27,12 +25,17 @@ const PostDetails = () => {
   //dispatch
   useEffect(() => {
     dispatch(getPostAction(postId));
-  }, [dispatch, postId, post?.post?.likes.length, post?.post?.dislikes.length]);
+  }, [
+    dispatch,
+    postId,
+    post?.post?.likes?.length,
+    post?.post?.dislikes?.length,
+  ]);
 
   //! Post view count
-  useEffect(() => {
-    dispatch(posViewsCounttAction(postId));
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(posViewsCounttAction(postId));
+  // }, [dispatch]);
 
   //! Get the creator of the post
   const creator = post?.post?.author?._id?.toString();
@@ -118,8 +121,8 @@ const PostDetails = () => {
             {/* Posts stats */}
             <PostStats
               views={post?.post?.postViews}
-              likes={post?.post?.likes.length}
-              dislikes={post?.post?.dislikes.length}
+              likes={post?.post?.likes?.length}
+              dislikes={post?.post?.dislikes?.length}
               postViews={post?.post?.postViews}
               totalComments={post?.post?.comments?.length}
               createdAt={post?.post?.createdAt}

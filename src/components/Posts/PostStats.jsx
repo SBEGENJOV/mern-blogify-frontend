@@ -1,9 +1,12 @@
-import { useEffect } from "react";
-import { AiOutlineEye } from "react-icons/ai";
-import { RiEmotionLine } from "react-icons/ri";
 import { MdWavingHand } from "react-icons/md";
 import moment from "moment";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {
+  clapPostAction,
+  dislikePostAction,
+  likePostAction,
+} from "../../redux/slices/posts/postsSlice";
+import PropTypes from "prop-types";
 
 const PostStats = ({
   views,
@@ -167,3 +170,14 @@ const PostStats = ({
 };
 
 export default PostStats;
+
+PostStats.propTypes = {
+  views: PropTypes.number,
+  likes: PropTypes.number,
+  dislikes: PropTypes.number,
+  totalComments: PropTypes.number,
+  readingTime: PropTypes.number,
+  createdAt: PropTypes.string,
+  postId: PropTypes.string.isRequired,
+  claps: PropTypes.number,
+};

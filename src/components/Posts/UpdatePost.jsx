@@ -23,7 +23,7 @@ const UpdatePost = () => {
     };
   });
   //! Get post from store
-  const { post, error, loading, success } = useSelector(
+  const {  error, loading, success } = useSelector(
     (state) => state?.posts
   );
 
