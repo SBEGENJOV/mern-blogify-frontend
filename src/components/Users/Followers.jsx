@@ -17,7 +17,7 @@ export default function Followers({ followers }) {
             <li key={user._id}>
               <img
                 className="w-24 h-24 mx-auto rounded-full"
-                src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                src={user.profilePicture}
                 alt="user profile"
               />
               <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">
