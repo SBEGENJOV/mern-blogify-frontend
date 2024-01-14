@@ -8,6 +8,7 @@ import {
   unFollowUserAction,
   userPrivateProfileAction,
   userPublicProfileAction,
+  userViewsCounttAction,
 } from "../../redux/slices/users/usersSlices";
 import UserPosts from "./UserPosts";
 
@@ -38,6 +39,10 @@ export default function PublicUserProfile() {
     dispatch(userPrivateProfileAction());
   }, [userId, dispatch, hasBlocked, hasfollowed]);
 
+  //! User view count
+  useEffect(() => {
+    dispatch(userViewsCounttAction(userId));
+  }, [dispatch]);
   //Block user handler
   const blockUserHandler = () => {
     dispatch(blockUserAction(userId));
