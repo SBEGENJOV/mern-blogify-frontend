@@ -32,6 +32,6 @@ export default function Followers({ followers }) {
   );
 }
 
-Followers.propTypes = {
+Followers.propTypes = { 
   followers: PropTypes.array,
 };
