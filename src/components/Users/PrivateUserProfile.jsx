@@ -138,7 +138,7 @@ export default function PrivateUserProfile() {
                                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                               />
                             </svg>
-                            ({profile?.user?.profileViewrs?.length})
+                            Profiline Bakanlar: {profile?.user?.profileViewrs?.length}
                           </button>
 
                           {/* follow */}
@@ -158,7 +158,7 @@ export default function PrivateUserProfile() {
                                 clipRule="evenodd"
                               />
                             </svg>
-                            Takipçiler ({profile?.user?.followers?.length})
+                            Takipçiler: {profile?.user?.followers?.length}
                           </button>
                         </div>
                       </div>
