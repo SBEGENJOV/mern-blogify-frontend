@@ -33,7 +33,6 @@ export default function PublicUserProfile() {
   const followedUsers = profile?.user?.following;
 
   const hasfollowed = followedUsers?.some((user) => user?._id === userId);
-  console.log(hasfollowed);
   // get user private profile
   useEffect(() => {
     dispatch(userPrivateProfileAction());
