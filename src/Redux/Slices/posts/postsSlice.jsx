@@ -1,5 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import {
+  resetErrorAction,
+  resetSuccesAction,
+} from "../globalSlice/globalSlice";
+import BASE_URL from "../../../utils/baseURL";
 
 //initialstate
 const INITIAL_STATE = {
@@ -16,16 +21,15 @@ export const fetchPublicPostsAction = createAsyncThunk(
   async (payload, { rejectWithValue, getState, dispatch }) => {
     //make request
     try {
-      const { data } = await axios.get(
-        `https://blogify-api-v1-wo4n.onrender.com/posts`
-      );
+      const { data } = await axios.get(`${BASE_URL}/posts`);
       return data;
     } catch (error) {
       return rejectWithValue(error?.response?.data);
     }
   }
 );
-//!Fetch private posts
+
+//!Fetch pricate posts
 export const fetchPrivatePostsAction = createAsyncThunk(
   "posts/fetch-private-posts",
   async (
@@ -41,7 +45,7 @@ export const fetchPrivatePostsAction = createAsyncThunk(
         },
       };
       const { data } = await axios.get(
-        `https://blogify-api-v1-wo4n.onrender.com/posts?page=${page}&limit=${limit}&searchTerm=${searchTerm}&category=${category}`,
+        `${BASE_URL}/posts?page=${page}&limit=${limit}&searchTerm=${searchTerm}&category=${category}`,
         config
       );
       return data;
@@ -50,46 +54,13 @@ export const fetchPrivatePostsAction = createAsyncThunk(
     }
   }
 );
-
-// ! Create post
-export const addPostAction = createAsyncThunk(
-  "post/create",
-  async (payload, { rejectWithValue, getState, dispatch }) => {
-    try {
-      //convert the payload to formdata
-      const formData = new FormData();
-      formData.append("title", payload?.title);
-      formData.append("content", payload?.content);
-      formData.append("categoryId", payload?.category);
-      formData.append("file", payload?.image);
-
-      const token = getState().users?.userAuth?.userInfo?.token;
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-      const { data } = await axios.post(
-        `https://blogify-api-v1-wo4n.onrender.com/posts`,
-        formData,
-        config
-      );
-      return data;
-    } catch (error) {
-      return rejectWithValue(error?.response?.data);
-    }
-  }
-);
-
 //!fetch single  posts
 export const getPostAction = createAsyncThunk(
   "posts/get-post",
   async (postId, { rejectWithValue, getState, dispatch }) => {
     //make request
     try {
-      const { data } = await axios.get(
-        `https://blogify-api-v1-wo4n.onrender.com/posts/${postId}`
-      );
+      const { data } = await axios.get(`${BASE_URL}/posts/${postId}`);
       return data;
     } catch (error) {
       return rejectWithValue(error?.response?.data);
@@ -110,9 +81,106 @@ export const deletePostAction = createAsyncThunk(
         },
       };
       const { data } = await axios.delete(
-        `https://blogify-api-v1-wo4n.onrender.com/posts/${postId}`,
+        `${BASE_URL}/posts/${postId}`,
         config
       );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data);
+    }
+  }
+);
+
+//!post view count
+export const posViewsCounttAction = createAsyncThunk(
+  "posts/post-views",
+  async (postId, { rejectWithValue, getState, dispatch }) => {
+    //make request
+    try {
+      const token = getState().users?.userAuth?.userInfo?.token;
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const { data } = await axios.put(
+        `${BASE_URL}/posts/${postId}/post-view-count`,
+        {},
+        config
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data);
+    }
+  }
+);
+
+//!like post
+export const likePostAction = createAsyncThunk(
+  "posts/like",
+  async (postId, { rejectWithValue, getState, dispatch }) => {
+    //make request
+    try {
+      const token = getState().users?.userAuth?.userInfo?.token;
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const { data } = await axios.put(
+        `${BASE_URL}/posts/likes/${postId}`,
+        {},
+        config
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data);
+    }
+  }
+);
+
+//!dislike post
+export const dislikePostAction = createAsyncThunk(
+  "posts/dislike",
+  async (postId, { rejectWithValue, getState, dispatch }) => {
+    //make request
+    try {
+      const token = getState().users?.userAuth?.userInfo?.token;
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const { data } = await axios.put(
+        `${BASE_URL}/posts/dislikes/${postId}`,
+        {},
+        config
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data);
+    }
+  }
+);
+// ! Create post
+export const addPostAction = createAsyncThunk(
+  "post/create",
+  async (payload, { rejectWithValue, getState, dispatch }) => {
+    try {
+      //convert the payload to formdata
+      const formData = new FormData();
+      formData.append("title", payload?.title);
+      formData.append("content", payload?.content);
+      formData.append("categoryId", payload?.category);
+      formData.append("file", payload?.image);
+
+      const token = getState().users?.userAuth?.userInfo?.token;
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const { data } = await axios.post(`${BASE_URL}/posts`, formData, config);
       return data;
     } catch (error) {
       return rejectWithValue(error?.response?.data);
@@ -139,56 +207,8 @@ export const updatePostAction = createAsyncThunk(
         },
       };
       const { data } = await axios.put(
-        `https://blogify-api-v1-wo4n.onrender.com/posts/${payload?.postId}`,
+        `${BASE_URL}/posts/${payload?.postId}`,
         formData,
-        config
-      );
-      return data;
-    } catch (error) {
-      return rejectWithValue(error?.response?.data);
-    }
-  }
-);
-
-//!like post
-export const likePostAction = createAsyncThunk(
-  "posts/like",
-  async (postId, { rejectWithValue, getState, dispatch }) => {
-    //make request
-    try {
-      const token = getState().users?.userAuth?.userInfo?.token;
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-      const { data } = await axios.put(
-        `https://blogify-api-v1-wo4n.onrender.com/posts/likes/${postId}`,
-        {},
-        config
-      );
-      return data;
-    } catch (error) {
-      return rejectWithValue(error?.response?.data);
-    }
-  }
-);
-
-//!dislike post
-export const dislikePostAction = createAsyncThunk(
-  "posts/dislike",
-  async (postId, { rejectWithValue, getState, dispatch }) => {
-    //make request
-    try {
-      const token = getState().users?.userAuth?.userInfo?.token;
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-      const { data } = await axios.put(
-        `https://blogify-api-v1-wo4n.onrender.com/posts/dislikes/${postId}`,
-        {},
         config
       );
       return data;
@@ -211,7 +231,7 @@ export const clapPostAction = createAsyncThunk(
         },
       };
       const { data } = await axios.put(
-        `https://blogify-api-v1-wo4n.onrender.com/posts/claps/${postId}`,
+        `${BASE_URL}/posts/claps/${postId}`,
         {},
         config
       );
@@ -222,10 +242,13 @@ export const clapPostAction = createAsyncThunk(
   }
 );
 
-//!post view count
-export const posViewsCounttAction = createAsyncThunk(
-  "posts/post-views",
-  async (postId, { rejectWithValue, getState, dispatch }) => {
+//!schedule post
+export const shedulePostAction = createAsyncThunk(
+  "posts/schedule-post",
+  async (
+    { postId, scheduledPublish },
+    { rejectWithValue, getState, dispatch }
+  ) => {
     //make request
     try {
       const token = getState().users?.userAuth?.userInfo?.token;
@@ -235,8 +258,10 @@ export const posViewsCounttAction = createAsyncThunk(
         },
       };
       const { data } = await axios.put(
-        `https://blogify-api-v1-wo4n.onrender.com/posts/${postId}/post-view-count`,
-        {},
+        `${BASE_URL}/posts/schedule/${postId}`,
+        {
+          scheduledPublish,
+        },
         config
       );
       return data;
@@ -266,7 +291,7 @@ const postSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     });
-    //!fetch private posts
+    //!fetch priavte posts
     builder.addCase(fetchPrivatePostsAction.pending, (state, action) => {
       state.loading = true;
     });
@@ -281,7 +306,6 @@ const postSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     });
-
     //! create post
     builder.addCase(addPostAction.pending, (state, action) => {
       state.loading = true;
@@ -297,32 +321,17 @@ const postSlice = createSlice({
       state.loading = false;
     });
 
-    //! get single post
-    builder.addCase(getPostAction.pending, (state, action) => {
+    //! schedule post
+    builder.addCase(shedulePostAction.pending, (state, action) => {
       state.loading = true;
     });
-    builder.addCase(getPostAction.fulfilled, (state, action) => {
+    builder.addCase(shedulePostAction.fulfilled, (state, action) => {
       state.post = action.payload;
-      state.loading = false;
-      state.error = null;
-    });
-    builder.addCase(getPostAction.rejected, (state, action) => {
-      state.error = action.payload;
-      state.loading = false;
-    });
-
-    //! detelet post
-    builder.addCase(deletePostAction.pending, (state, action) => {
-      state.loading = true;
-    });
-    //handle fulfilled state
-    builder.addCase(deletePostAction.fulfilled, (state, action) => {
       state.success = true;
       state.loading = false;
       state.error = null;
     });
-    //* Handle the rejection
-    builder.addCase(deletePostAction.rejected, (state, action) => {
+    builder.addCase(shedulePostAction.rejected, (state, action) => {
       state.error = action.payload;
       state.loading = false;
     });
@@ -338,6 +347,20 @@ const postSlice = createSlice({
       state.error = null;
     });
     builder.addCase(updatePostAction.rejected, (state, action) => {
+      state.error = action.payload;
+      state.loading = false;
+    });
+
+    //! get single post
+    builder.addCase(getPostAction.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(getPostAction.fulfilled, (state, action) => {
+      state.post = action.payload;
+      state.loading = false;
+      state.error = null;
+    });
+    builder.addCase(getPostAction.rejected, (state, action) => {
       state.error = action.payload;
       state.loading = false;
     });
@@ -369,6 +392,21 @@ const postSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     });
+
+    //! post view
+    builder.addCase(posViewsCounttAction.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(posViewsCounttAction.fulfilled, (state, action) => {
+      state.post = action.payload;
+      state.loading = false;
+      state.error = null;
+    });
+    builder.addCase(posViewsCounttAction.rejected, (state, action) => {
+      state.error = action.payload;
+      state.loading = false;
+    });
+
     //! claps post
     builder.addCase(clapPostAction.pending, (state, action) => {
       state.loading = true;
@@ -382,18 +420,29 @@ const postSlice = createSlice({
       state.error = action.payload;
       state.loading = false;
     });
-    //! post view
-    builder.addCase(posViewsCounttAction.pending, (state, action) => {
+    //! detelet post
+    builder.addCase(deletePostAction.pending, (state, action) => {
       state.loading = true;
     });
-    builder.addCase(posViewsCounttAction.fulfilled, (state, action) => {
-      state.post = action.payload;
+    //handle fulfilled state
+    builder.addCase(deletePostAction.fulfilled, (state, action) => {
+      state.success = true;
       state.loading = false;
       state.error = null;
     });
-    builder.addCase(posViewsCounttAction.rejected, (state, action) => {
+    //* Handle the rejection
+    builder.addCase(deletePostAction.rejected, (state, action) => {
       state.error = action.payload;
       state.loading = false;
+    });
+
+    //! Reset error action
+    builder.addCase(resetErrorAction.fulfilled, (state) => {
+      state.error = null;
+    });
+    //! Reset success action
+    builder.addCase(resetSuccesAction.fulfilled, (state) => {
+      state.success = false;
     });
   },
 });

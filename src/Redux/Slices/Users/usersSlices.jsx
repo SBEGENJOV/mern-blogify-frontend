@@ -371,6 +371,30 @@ export const updateUserProfileAction = createAsyncThunk(
   }
 );
 
+//!user view count
+export const userViewsCounttAction = createAsyncThunk(
+  "users/user-views",
+  async (userId, { rejectWithValue, getState, dispatch }) => {
+    //make request
+    try {
+      const token = getState().users?.userAuth?.userInfo?.token;
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+      const { data } = await axios.put(
+        `${BASE_URL}/users/profile-viewer/${userId}`,
+        {},
+        config
+      );
+      return data;
+    } catch (error) {
+      return rejectWithValue(error?.response?.data);
+    }
+  }
+);
+
 //! Users slices
 const usersSlice = createSlice({
   name: "users",
@@ -614,6 +638,19 @@ const usersSlice = createSlice({
     //! Reset success action
     builder.addCase(resetSuccesAction.fulfilled, (state) => {
       state.success = false;
+    });
+    //! post view
+    builder.addCase(userViewsCounttAction.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(userViewsCounttAction.fulfilled, (state, action) => {
+      state.user = action.payload;
+      state.loading = false;
+      state.error = null;
+    });
+    builder.addCase(userViewsCounttAction.rejected, (state, action) => {
+      state.error = action.payload;
+      state.loading = false;
     });
   },
 });

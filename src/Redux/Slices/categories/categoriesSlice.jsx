@@ -5,6 +5,7 @@ import {
   resetErrorAction,
   resetSuccesAction,
 } from "../globalSlice/globalSlice";
+import BASE_URL from "../../../utils/baseURL";
 
 //initialstate
 const INITIAL_STATE = {
@@ -20,7 +21,7 @@ export const fetchCategoriesAction = createAsyncThunk(
   "categories/lists",
   async (payload, { rejectWithValue, getState, dispatch }) => {
     try {
-      const { data } = await axios.get(`https://blogify-api-v1-wo4n.onrender.com/categories`);
+      const { data } = await axios.get(`${BASE_URL}/categories`);
       return data;
     } catch (error) {
       return rejectWithValue(error?.response?.data);
