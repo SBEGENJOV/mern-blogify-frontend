@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./components/Homepage/Homepage";
 import Login from "./components/Users/Login";
-import UserProfile from "./components/Users/UserProfile";
 import PublicNavbar from "./components/Navbar/PublicNavbar";
 import PrivateNavbar from "./components/Navbar/PrivateNavbar";
 import { useSelector } from "react-redux";
@@ -12,6 +11,8 @@ import PostDetails from "./components/Posts/PostDetails";
 import PostLists from "./components/Posts/PostLists";
 import UpdatePost from "./components/Posts/UpdatePost";
 import Register from "./components/Users/Register";
+import PublicUserProfile from "./components/Users/PublicUserProfile";
+import PrivateUserProfile from "./components/Users/PrivateUserProfile";
 
 export default function App() {
   const { userAuth } = useSelector((state) => state?.users);
@@ -45,15 +46,15 @@ export default function App() {
         ></Route>
         {/* Profil yönlendirmeleri */}
         <Route
-          path="/user-profile"
+          path="/user-public-profile/:userId"
           element={
             <ProctedRoute>
-              <UserProfile />
+              <PublicUserProfile />
             </ProctedRoute>
           }
         ></Route>
-         {/* Ana sayfa postlar */}
-         <Route
+        {/* Ana sayfa postlar */}
+        <Route
           path="/posts"
           element={
             <ProctedRoute>
@@ -67,6 +68,15 @@ export default function App() {
           element={
             <ProctedRoute>
               <UpdatePost />
+            </ProctedRoute>
+          }
+        ></Route>
+         {/* private user profile */}
+         <Route
+          path="/user-profile"
+          element={
+            <ProctedRoute>
+              <PrivateUserProfile />
             </ProctedRoute>
           }
         ></Route>

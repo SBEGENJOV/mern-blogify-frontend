@@ -12,7 +12,7 @@ function classNames(...classes) {
 }
 
 export default function PrivateNavbar() {
-  const { profile, userAuth } = useSelector((state) => state?.users);
+  const { userAuth } = useSelector((state) => state?.users);
   //!dispatch
   const dispatch = useDispatch();
   const logoutHandler = () => {
