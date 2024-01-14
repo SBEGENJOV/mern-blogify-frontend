@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineLock } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { passwordResetAction } from "../../Redux/Slices/users/usersSlices";
+import { passwordResetAction } from "../../Redux/Slices/Users/usersSlices";
 import { useParams } from "react-router-dom";
 import LoadingComponent from "../Alert/LoadingComponent";
 import SuccesMsg from "../Alert/SuccesMsg";

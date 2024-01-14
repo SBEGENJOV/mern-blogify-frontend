@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { loginAction } from "../../Redux/Slices/users/usersSlices";
+import { loginAction } from "../../Redux/Slices/Users/usersSlices";
 import LoadingComponent from "../Alert/LoadingComponent";
 import ErrorMsg from "../Alert/ErrorMsg";
 import SuccesMsg from "../Alert/SuccesMsg";

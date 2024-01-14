@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   logoutAction,
   verifyAccountAction,
-} from "../../Redux/Slices/users/usersSlices";
+} from "../../Redux/Slices/Users/usersSlices";
 
 export default function AccountVerification() {
   //! Get the token the url

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { forgotPasswordAction } from "../../Redux/Slices/users/usersSlices";
+import { forgotPasswordAction } from "../../Redux/Slices/Users/usersSlices";
 import LoadingComponent from "../Alert/LoadingComponent";
 
 const PasswordResetRequest = () => {

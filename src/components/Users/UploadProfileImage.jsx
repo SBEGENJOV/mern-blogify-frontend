@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LoadingComponent from "../Alert/LoadingComponent";
 import ErrorMsg from "../Alert/ErrorMsg";
 import SuccesMsg from "../Alert/SuccesMsg";
-import { uploadProfileImageAction } from "../../Redux/Slices/users/usersSlices";
+import { uploadProfileImageAction } from "../../Redux/Slices/Users/usersSlices";
 
 const UploadProfileImage = () => {
   //fetch categories

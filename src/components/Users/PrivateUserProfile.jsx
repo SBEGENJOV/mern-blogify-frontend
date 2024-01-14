@@ -4,7 +4,7 @@ import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import {
   sendAccVerificationEmailAction,
   userPrivateProfileAction,
-} from "../../Redux/Slices/users/usersSlices";
+} from "../../Redux/Slices/Users/usersSlices";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import UserPosts from "./UserPosts";
