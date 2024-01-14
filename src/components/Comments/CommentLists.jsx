@@ -8,7 +8,7 @@ const CommentsList = ({ comments }) => {
         <div className="flex-grow">
           <div>
             {comments?.length <= 0 ? (
-              <h2>No Comments</h2>
+              <h2>Yorum yok</h2>
             ) : (
               comments?.map((comment) => {
                 return (

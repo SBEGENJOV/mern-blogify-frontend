@@ -144,7 +144,7 @@ const PostStats = ({
             d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        {readingTime} min read
+        {readingTime} min okuma
       </div>
 
       <div className="flex items-center gap-1 m-2 text-2xl text-gray-400">

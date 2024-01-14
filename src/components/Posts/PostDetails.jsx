@@ -182,7 +182,7 @@ const PostDetails = () => {
                 </div>
               )}
               <h3 className="mb-4 text-2xl font-semibold md:text-3xl text-coolGray-800">
-                Add a comment
+                Yorum ekle
               </h3>
 
               {/* Comment form  */}

@@ -30,10 +30,10 @@ const SchedulePost = () => {
     <div className="flex items-center justify-center h-screen bg-green-800">
       <div className="bg-white rounded-lg shadow-md p-6 w-96">
         <h1 className="text-2xl font-bold mb-4 text-green-500">
-          Schedule Post
+         Çizelge Gönderi
         </h1>
         <p className="mb-6 text-gray-600">
-          Please select a date from the date picker below
+          Lütfen aşağıdaki tarih seçicisinden bir tarih seçin
         </p>
         {error && <ErrorMsg message={error?.message} />}
         {success && (
@@ -57,7 +57,7 @@ const SchedulePost = () => {
               type="submit"
               className="w-full py-2 px-4 bg-green-500 text-white rounded-md"
             >
-              Schedule
+              Planla
             </button>
           )}
         </form>

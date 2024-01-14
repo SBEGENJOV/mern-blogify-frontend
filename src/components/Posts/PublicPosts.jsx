@@ -31,7 +31,7 @@ const PublicPosts = () => {
                 Blog
               </span>
               <h3 className="mb-4 text-3xl md:text-5xl leading-tight text-darkCoolGray-900 font-bold tracking-tighter">
-                Read our Trending Articles
+               Trend Makalelerimizi Okuyun
               </h3>
             </div>
 
@@ -82,7 +82,7 @@ const PublicPosts = () => {
       className="inline-flex items-center text-base md:text-lg text-green-500 hover:text-green-600 font-semibold"
       to={`/posts/${post?._id}`}
     >
-      <span className="mr-3">Read Post</span>
+      <span className="mr-3">Devamını oku</span>
       <svg
         width={8}
         height={10}

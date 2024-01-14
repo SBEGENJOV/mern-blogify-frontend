@@ -107,7 +107,7 @@ export default function PrivateUserProfile() {
                               </div>
                               <div className="ml-3">
                                 <h3 className="text-sm font-medium text-yellow-800">
-                                  Click here to verify your account
+                                 Hesabınızı doğrulamak için buraya tıklayın
                                 </h3>
                               </div>
                             </div>
@@ -158,7 +158,7 @@ export default function PrivateUserProfile() {
                                 clipRule="evenodd"
                               />
                             </svg>
-                            Followers ({profile?.user?.followers?.length})
+                            Takipçiler ({profile?.user?.followers?.length})
                           </button>
                         </div>
                       </div>
@@ -181,7 +181,7 @@ export default function PrivateUserProfile() {
                     </div>
                     <div className="sm:col-span-1">
                       <dt className="text-sm font-medium text-gray-500">
-                        Date Joined:{" "}
+                        Tarihte katıldı:{" "}
                         {new Date(profile?.user?.createdAt).toDateString()}
                       </dt>
                     </div>

@@ -43,7 +43,7 @@ const Homepage = () => {
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDjOum6ZqWsYOm9xwGQVs_EkV9-tRy9G35Qojh9aeB_Q&s"
                     />
                     <p className="text-lg md:text-xl leading-7 text-coolGray-500 font-medium">
-                      Teknoloji ve yenilik alanındaki en sonun paketlenmesi
+                      Teknoloji ve yenilik alanındaki en son bloglar
                     </p>
                   </li>
                   <li className="mb-6 flex items-center">
@@ -52,8 +52,7 @@ const Homepage = () => {
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDjOum6ZqWsYOm9xwGQVs_EkV9-tRy9G35Qojh9aeB_Q&s"
                     />
                     <p className="text-lg md:text-xl leading-7 text-coolGray-500 font-medium">
-                      En son teknolojiye odaklanan bir blog için mükemmel ve
-                      trendler
+                      En son teknolojiye odaklanan bir blog için burada kalın
                     </p>
                   </li>
                   <li className="flex items-center">
@@ -62,8 +61,7 @@ const Homepage = () => {
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDjOum6ZqWsYOm9xwGQVs_EkV9-tRy9G35Qojh9aeB_Q&s"
                     />
                     <p className="text-lg md:text-xl leading-7 text-coolGray-500 font-medium">
-                      Blogunuz yenilikçi paylaşmakla ilgiliyse harika ve
-                      Erişilebilir tarifler.
+                      Blogun yenilikçi paylaşmakları ilgini çektiyse bizimle kal.
                     </p>
                   </li>
                 </ul>

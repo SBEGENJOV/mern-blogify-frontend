@@ -31,16 +31,16 @@ export default function AccountVerification() {
     <>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         {loading ? (
-          <h1>Verifying please wait....</h1>
+          <h1>Doğrulama için lütfen bekleyin ....</h1>
         ) : (
           <>
             <FiCheckCircle className="text-green-500 text-9xl" />
             <h1 className="mt-4 text-3xl font-bold text-gray-700">
-              Account Verified!
+             Hesap doğrulandı!
             </h1>
             <p className="mt-2 text-lg text-gray-600">
-              Thank you for verifying your email address. You may now proceed to
-              login.
+             E -posta adresinizi doğruladığınız için teşekkür ederiz.Şimdi ilerleyebilirsiniz
+              giriş yap.
             </p>
             <button
               onClick={logoutHandler}

@@ -32,7 +32,7 @@ const AddComment = ({ postId, comments }) => {
     <div className="bg-white rounded shadow">
       <div className="px-4 py-5 sm:p-6">
         <h3 className="text-lg font-medium leading-6 text-blue-600">
-          Comments
+          Yorumlar
         </h3>
         <div className="mt-5">
           <hr className="mt-5 border-gray-300" />
@@ -44,12 +44,12 @@ const AddComment = ({ postId, comments }) => {
                 <div className="border rounded-lg shadow-sm">
                   <div className="p-3 border-b bg-gray-50">
                     <h4 className="text-sm font-medium text-blue-600">
-                      Add a comment
+                      Yorum ekle
                     </h4>
                   </div>
                   <div className="p-3">
                     <label htmlFor="comment" className="sr-only">
-                      Comment
+                      Yorum
                     </label>
                     <textarea
                       id="comment"
@@ -66,7 +66,7 @@ const AddComment = ({ postId, comments }) => {
                       type="submit"
                       className="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-50"
                     >
-                      Submit
+                      Gönder
                     </button>
                   </div>
                 </div>

@@ -68,13 +68,13 @@ const UpdatePost = () => {
       <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
         <div className="flex flex-col items-center p-10 xl:px-24 xl:pb-12 bg-white lg:max-w-xl lg:ml-auto rounded-4xl shadow-2xl">
           <h2 className="mb-4 text-2xl md:text-3xl text-coolGray-900 font-bold text-center">
-            Update Post
+            GÜNCELLEME POST
           </h2>
           {/* error */}
           {error && <ErrorMsg message={error?.message} />}
           {success && <SuccesMsg message="Post Updated successfully" />}
           <h3 className="mb-7 text-base md:text-lg text-coolGray-500 font-medium text-center">
-            Share your thoughts and ideas with the community
+            Düşüncelerinizi ve fikirlerinizi toplulukla paylaşın
           </h3>
           <label className="mb-4 flex flex-col w-full">
             <span className="mb-1 text-coolGray-800 font-medium">Title</span>
@@ -124,7 +124,7 @@ const UpdatePost = () => {
               className="mb-4 inline-block py-3 px-7 w-full leading-6 text-green-50 font-medium text-center bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md"
               type="submit"
             >
-              Update
+              Güncele
             </button>
           )}
         </div>

@@ -44,7 +44,7 @@ export const PasswordReset = () => {
     >
       <div className="w-96 p-6 bg-white rounded-xl shadow-md">
         <h1 className="text-3xl font-bold text-gray-700 text-center mb-6">
-          Reset your password
+       Şifrenizi sıfırlayın
         </h1>
         {success && (
           <SuccesMsg message="Password Reset Was successful, login with yiur new password" />
@@ -66,7 +66,7 @@ export const PasswordReset = () => {
           <LoadingComponent />
         ) : (
           <button className="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none">
-            Reset Password
+            Şifreyi yenile
           </button>
         )}
       </div>

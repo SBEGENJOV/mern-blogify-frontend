@@ -55,7 +55,7 @@ const UploadCoverImage = () => {
       <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
         <div className="flex flex-col items-center p-10 xl:px-24 xl:pb-12 bg-white lg:max-w-xl lg:ml-auto rounded-4xl shadow-2xl">
           <h2 className="mb-4 text-2xl md:text-3xl text-coolGray-900 font-bold text-center">
-            Upload Cover Image
+            Kapak Resmini Yükle
           </h2>
           {/* error */}
           {error && <ErrorMsg message={error?.message} />}
@@ -63,7 +63,7 @@ const UploadCoverImage = () => {
             <SuccesMsg message="Image uploaded successfully" />
           )}
           <h3 className="mb-7 text-base md:text-lg text-coolGray-500 font-medium text-center">
-            Upload or update Cover Image
+            Kapak resmini yükleyin veya güncelleyin
           </h3>
 
           <label className="mb-4 flex flex-col w-full">
@@ -87,7 +87,7 @@ const UploadCoverImage = () => {
               className="mb-4 inline-block py-3 px-7 w-full leading-6 text-green-50 font-medium text-center bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md"
               type="submit"
             >
-              Upload Image
+            Fotoğrafı Yükle
             </button>
           )}
         </div>

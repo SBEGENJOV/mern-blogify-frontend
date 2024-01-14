@@ -16,10 +16,10 @@ const UserPosts = ({ posts }) => {
       <div className="container relative z-10 px-4 mx-auto">
         <div className="mx-auto mb-8 text-center md:max-w-5xl md:mb-16">
           <span className="inline-block px-2 py-px mb-4 text-xs font-medium leading-5 text-green-500 uppercase bg-green-100 rounded-full shadow-sm">
-            Your Posts
+            Sizin gönderileriniz
           </span>
           <h3 className="mb-4 text-3xl font-bold leading-tight tracking-tighter md:text-5xl text-darkCoolGray-900">
-            Top Posts [{posts?.length}]
+            Toplam Gönderiniz [{posts?.length}]
           </h3>
         </div>
 

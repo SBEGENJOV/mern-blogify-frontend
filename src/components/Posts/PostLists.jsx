@@ -57,7 +57,7 @@ const PostLists = () => {
                 Blog
               </span>
               <h3 className="mb-4 text-3xl md:text-5xl leading-tight text-darkCoolGray-900 font-bold tracking-tighter">
-                Read our Trending Articles
+                Trend Makalelerimizi Okuyun
               </h3>
               {/* Search input */}
               <div className="mb-4">
@@ -92,7 +92,7 @@ const PostLists = () => {
               ) : error ? (
                 <h3 className="text-red-500 text-center">{error?.message}</h3>
               ) : posts?.posts?.length <= 0 ? (
-                <h1>No Post found</h1>
+                <h1>Gönderi bulunamadı</h1>
               ) : (
                 posts?.posts?.map((post) => {
                   return (
@@ -164,7 +164,7 @@ const PostLists = () => {
               className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
               onClick={handlePrev}
             >
-              Prev
+              Önçeki
             </button>
           )}
           {posts?.posts?.length > 0 && (
@@ -172,7 +172,7 @@ const PostLists = () => {
               className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
               onClick={handleNext}
             >
-              Next
+              Sonraki
             </button>
           )}
         </div>

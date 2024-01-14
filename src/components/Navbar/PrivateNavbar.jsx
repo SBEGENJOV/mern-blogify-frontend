@@ -30,7 +30,7 @@ export default function PrivateNavbar() {
                 <div className="-ml-2 mr-2 flex items-center md:hidden">
                   {/* Mobile menu button */}
                   <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <span className="sr-only">Open main menu</span>
+                    <span className="sr-only">Ana Menü</span>
                     {open ? (
                       <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                     ) : (
@@ -51,13 +51,13 @@ export default function PrivateNavbar() {
                     to={"/"}
                     className="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900"
                   >
-                    Home
+                    Ana Sayfa
                   </Link>
                   <Link
                     to={"/posts"}
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >
-                    Posts
+                    Gönderiler
                   </Link>
                 </div>
               </div>
@@ -68,7 +68,7 @@ export default function PrivateNavbar() {
                     className="ml-2 relative inline-flex items-center gap-x-1.5 rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     <PlusIcon className="-ml-0.5 h-5 w-5" aria-hidden="true" />
-                    Add New Post
+                    Yeni gönderi ekle
                   </Link>
                 </div>
                 <div className="hidden md:ml-4 md:flex md:flex-shrink-0 md:items-center">
@@ -76,7 +76,7 @@ export default function PrivateNavbar() {
                   <Menu as="div" className="relative ml-3">
                     <div>
                       <Menu.Button className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                        <span className="sr-only">Open user menu</span>
+                        <span className="sr-only">Kullanıcı menüsünü aç</span>
                         <img
                           className="h-8 w-8 rounded-full"
                           src={
@@ -106,7 +106,7 @@ export default function PrivateNavbar() {
                                 "block px-4 py-2 text-sm text-gray-700"
                               )}
                             >
-                              Your Profile
+                              Profilin
                             </Link>
                           )}
                         </Menu.Item>
@@ -119,7 +119,7 @@ export default function PrivateNavbar() {
                                 "block px-4 py-2 text-sm text-gray-700"
                               )}
                             >
-                              Settings
+                              Ayarlar
                             </Link>
                           )}
                         </Menu.Item>
@@ -132,7 +132,7 @@ export default function PrivateNavbar() {
                                 "block px-4 py-2 text-sm text-gray-700"
                               )}
                             >
-                              Sign out
+                              Oturumu Kapat
                             </button>
                           )}
                         </Menu.Item>
@@ -151,13 +151,13 @@ export default function PrivateNavbar() {
                 to={"/"}
                 className="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700 sm:pl-5 sm:pr-6"
               >
-                Home
+                Ana Sayfa
               </Link>
               <Link
                 to={"/posts"}
                 className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6"
               >
-                Posts
+                Gönderiler
               </Link>
             </div>
             <div className="border-t border-gray-200 pt-4 pb-3">
@@ -192,19 +192,19 @@ export default function PrivateNavbar() {
                   to={"/user-profile"}
                   className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
                 >
-                  Your Profile
+                 Profilin
                 </Link>
                 <Link
                   to={"/update-profile"}
                   className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
                 >
-                  Settings
+                  Ayarlar
                 </Link>
                 <button
                   onClick={logoutHandler}
                   className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800 sm:px-6"
                 >
-                  Sign out
+                 Oturumu Kapat
                 </button>
               </div>
             </div>

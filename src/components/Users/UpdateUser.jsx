@@ -53,7 +53,7 @@ const UpdateUser = () => {
     >
       <div className="w-96 p-6 bg-white rounded-xl shadow-md">
         <h1 className="text-3xl font-bold text-gray-700 text-center mb-6">
-          Update your Profile
+          Profilinizi güncelleyin
         </h1>
         {error && <ErrorMsg message={error?.message} />}
         {isUpdated && <SuccesMsg message="Profile updated, login back again" />}
@@ -86,7 +86,7 @@ const UpdateUser = () => {
             type="submit"
             className="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none"
           >
-            Update Profile
+            Profili Güncelle
           </button>
         )}
       </div>
