@@ -91,7 +91,7 @@ const PostLists = () => {
                 </div>
               ) : error ? (
                 <h3 className="text-red-500 text-center">{error?.message}</h3>
-              ) : posts?.post?.length <= 0 ? (
+              ) : posts?.posts?.length <= 0 ? (
                 <h1>No Post found</h1>
               ) : (
                 posts?.posts?.map((post) => {
@@ -159,18 +159,22 @@ const PostLists = () => {
         </section>
         {/* Pagination buttons */}
         <div className="flex justify-center items-center my-4 space-x-2">
-          <button
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-            onClick={handlePrev}
-          >
-            Prev
-          </button>
-          <button
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-            onClick={handleNext}
-          >
-            Next
-          </button>
+          {page > 1 && (
+            <button
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+              onClick={handlePrev}
+            >
+              Prev
+            </button>
+          )}
+          {posts?.posts?.length > 0 && (
+            <button
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+              onClick={handleNext}
+            >
+              Next
+            </button>
+          )}
         </div>
       </div>
     </>
