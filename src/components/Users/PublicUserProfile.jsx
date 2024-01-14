@@ -125,7 +125,7 @@ export default function PublicUserProfile() {
                                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                               />
                             </svg>
-                            20
+                            {user?.user?.profileViewrs?.length}
                           </button>
                           {/* block/unblock */}
                           {hasBlocked ? (
