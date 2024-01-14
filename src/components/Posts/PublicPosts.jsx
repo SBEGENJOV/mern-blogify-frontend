@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPublicPostsAction } from "../../redux/slices/posts/postsSlice";
 import LoadingComponent from "../Alert/LoadingComponent";

@@ -91,7 +91,7 @@ const PostDetails = () => {
                     className="w-12 h-12 rounded-full"
                     alt="author image"
                     src={
-                      userAuth?.userInfo?.profilePicture ||
+                      post?.post?.author?.profilePicture ||
                       "https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_1280.png"
                     }
                   />

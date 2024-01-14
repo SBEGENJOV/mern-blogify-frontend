@@ -39,11 +39,6 @@ const AddComment = ({ postId, comments }) => {
           <form className="mt-4" onSubmit={handleSubmit}>
             <div className="flex space-x-4">
               <div className="flex-none">
-                <img
-                  src="https://via.placeholder.com/50"
-                  alt="avatar"
-                  className="w-12 h-12 rounded-full"
-                />
               </div>
               <div className="flex-grow">
                 <div className="border rounded-lg shadow-sm">

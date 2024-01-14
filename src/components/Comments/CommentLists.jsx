@@ -15,11 +15,7 @@ const CommentsList = ({ comments }) => {
                   <>
                     <div className="bg-blue-50 px-4 py-3 sm:px-6 flex justify-between items-center">
                       <div>
-                        <img
-                          src={comment?.author?.profilePicture}
-                          alt="avatar"
-                          className="rounded-full h-12 w-12"
-                        />
+                        
                         <h4 className="text-sm font-medium text-blue-600">
                           {comment?.author?.username}
                         </h4>

@@ -11,6 +11,7 @@ import UserPosts from "./UserPosts";
 // import Followers from "./Followers";
 import { Link } from "react-router-dom";
 import SuccesMsg from "../Alert/SuccesMsg";
+import Followers from "./Followers";
 
 export default function PrivateUserProfile() {
   //! Get data from store
@@ -198,7 +199,7 @@ export default function PrivateUserProfile() {
                 {/* Posts Lists */}
                 <UserPosts  posts={profile?.user?.posts} />
                 {/* Followers */}
-                {/* <Followers followers={profile?.user?.followers} /> */}
+                <Followers followers={profile?.user?.followers} />
                 {/* Followed Users */}
                 {/* <UsersLists /> */}
               </article>
