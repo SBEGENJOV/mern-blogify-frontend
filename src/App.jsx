@@ -16,6 +16,8 @@ import PrivateUserProfile from "./components/Users/PrivateUserProfile";
 import UploadProfileImage from "./components/Users/UploadProfileImage";
 import UploadCoverImage from "./components/Users/UploadCoverImage";
 import AccountVerification from "./components/Users/AccountVerification";
+import PasswordResetRequest from "./components/Users/PasswordResetRequest";
+import PasswordReset from "./components/Users/PasswordReset";
 
 export default function App() {
   const { userAuth } = useSelector((state) => state?.users);
@@ -74,8 +76,8 @@ export default function App() {
             </ProctedRoute>
           }
         ></Route>
-         {/* private user profile */}
-         <Route
+        {/* private user profile */}
+        <Route
           path="/user-profile"
           element={
             <ProctedRoute>
@@ -83,8 +85,8 @@ export default function App() {
             </ProctedRoute>
           }
         ></Route>
-         {/* private upload profile image */}
-         <Route
+        {/* private upload profile image */}
+        <Route
           path="/upload-profile-image"
           element={
             <ProctedRoute>
@@ -109,6 +111,16 @@ export default function App() {
               <AccountVerification />
             </ProctedRoute>
           }
+        ></Route>
+        {/* forgot password request */}
+        <Route
+          path="/forgot-password"
+          element={<PasswordResetRequest />}
+        ></Route>
+        {/* reset password */}
+        <Route
+          path="/reset-password/:token"
+          element={<PasswordReset />}
         ></Route>
       </Routes>
     </BrowserRouter>
