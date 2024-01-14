@@ -1,10 +1,13 @@
+import { useSelector } from "react-redux";
 import PublicPosts from "../Posts/PublicPosts";
 import RegisterTemplate from "../Users/Register";
 
 const Homepage = () => {
+  const { userAuth } = useSelector((state) => state?.users);
   return (
+    
     <div>
-      <section className="relative bg-white overflow-hidden">
+      <section className=" bg-white overflow-hidden">
         <div className="bg-transparent">
           <div className="navbar-menu hidden fixed top-0 left-0 z-50 w-full h-full bg-coolGray-900 bg-opacity-50">
             <div className="fixed top-0 left-0 bottom-0 w-full max-w-xs bg-white">
@@ -61,18 +64,19 @@ const Homepage = () => {
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDjOum6ZqWsYOm9xwGQVs_EkV9-tRy9G35Qojh9aeB_Q&s"
                     />
                     <p className="text-lg md:text-xl leading-7 text-coolGray-500 font-medium">
-                      Blogun yenilikçi paylaşmakları ilgini çektiyse bizimle kal.
+                      Blogun yenilikçi paylaşmakları ilgini çektiyse bizimle
+                      kal.
                     </p>
                   </li>
                 </ul>
               </div>
               {/* Register Form */}
-              <RegisterTemplate />
+              {userAuth?.userInfo?.status !== "success" && <RegisterTemplate />}
             </div>
           </div>
         </div>
       </section>
-      <PublicPosts/>
+      <PublicPosts />
     </div>
   );
 };
