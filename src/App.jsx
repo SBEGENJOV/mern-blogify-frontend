@@ -18,6 +18,7 @@ import UploadCoverImage from "./components/Users/UploadCoverImage";
 import AccountVerification from "./components/Users/AccountVerification";
 import PasswordResetRequest from "./components/Users/PasswordResetRequest";
 import PasswordReset from "./components/Users/PasswordReset";
+import UpdateUser from "./components/Users/UpdateUser";
 
 export default function App() {
   const { userAuth } = useSelector((state) => state?.users);
@@ -121,6 +122,15 @@ export default function App() {
         <Route
           path="/reset-password/:token"
           element={<PasswordReset />}
+        ></Route>
+        {/* Update user */}
+        <Route
+          path="/update-profile"
+          element={
+            <ProctedRoute>
+              <UpdateUser />
+            </ProctedRoute>
+          }
         ></Route>
       </Routes>
     </BrowserRouter>

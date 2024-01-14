@@ -28,7 +28,7 @@ const UserPosts = ({ posts }) => {
             return (
               <>
                 <div className="w-full px-4 mb-8 md:w-1/2">
-                  <a className="block mb-6 overflow-hidden rounded-md" href="#">
+                  <a className="block mb-6 overflow-hidden rounded-md">
                     <img
                       className="w-full"
                       src={post?.image}
@@ -50,7 +50,6 @@ const UserPosts = ({ posts }) => {
                   </p>
                   <a
                     className="inline-block mb-4 text-2xl font-bold leading-tight md:text-3xl text-coolGray-800 hover:text-coolGray-900 hover:underline"
-                    href="#"
                   >
                     {post?.title}
                   </a>
