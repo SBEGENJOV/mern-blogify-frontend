@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
-import { addPostAction } from "../../redux/slices/posts/postsSlice";
+import { addPostAction } from "../../Redux/Slices/posts/postsSlice";
 import LoadingComponent from "../Alert/LoadingComponent";
 import ErrorMsg from "../Alert/ErrorMsg";
 import SuccesMsg from "../Alert/SuccesMsg";
-import { fetchCategoriesAction } from "../../redux/slices/categories/categoriesSlice";
+import { fetchCategoriesAction } from "../../Redux/Slices/categories/categoriesSlice";
 const AddPost = () => {
   //fetch categories
   const dispatch = useDispatch();

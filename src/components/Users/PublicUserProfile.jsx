@@ -9,7 +9,7 @@ import {
   userPrivateProfileAction,
   userPublicProfileAction,
   userViewsCounttAction,
-} from "../../redux/slices/users/usersSlices";
+} from "../../Redux/Slices/users/usersSlices";
 import UserPosts from "./UserPosts";
 
 export default function PublicUserProfile() {

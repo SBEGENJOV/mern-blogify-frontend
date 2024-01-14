@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LoadingComponent from "../Alert/LoadingComponent";
 import ErrorMsg from "../Alert/ErrorMsg";
 import SuccesMsg from "../Alert/SuccesMsg";
-import { uploadCoverImageAction } from "../../redux/slices/users/usersSlices";
+import { uploadCoverImageAction } from "../../Redux/Slices/users/usersSlices";
 
 const UploadCoverImage = () => {
   //fetch categories
@@ -87,7 +87,7 @@ const UploadCoverImage = () => {
               className="mb-4 inline-block py-3 px-7 w-full leading-6 text-green-50 font-medium text-center bg-green-500 hover:bg-green-600 focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-md"
               type="submit"
             >
-            Fotoğrafı Yükle
+              Fotoğrafı Yükle
             </button>
           )}
         </div>

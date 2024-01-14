@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import {
   logoutAction,
   verifyAccountAction,
-} from "../../redux/slices/users/usersSlices";
+} from "../../Redux/Slices/users/usersSlices";
 
 export default function AccountVerification() {
   //! Get the token the url
@@ -36,11 +36,11 @@ export default function AccountVerification() {
           <>
             <FiCheckCircle className="text-green-500 text-9xl" />
             <h1 className="mt-4 text-3xl font-bold text-gray-700">
-             Hesap doğrulandı!
+              Hesap doğrulandı!
             </h1>
             <p className="mt-2 text-lg text-gray-600">
-             E -posta adresinizi doğruladığınız için teşekkür ederiz.Şimdi ilerleyebilirsiniz
-              giriş yap.
+              E -posta adresinizi doğruladığınız için teşekkür ederiz.Şimdi
+              ilerleyebilirsiniz giriş yap.
             </p>
             <button
               onClick={logoutHandler}

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LoadingComponent from "../Alert/LoadingComponent";
 import ErrorMsg from "../Alert/ErrorMsg";
 import SuccesMsg from "../Alert/SuccesMsg";
-import { uploadProfileImageAction } from "../../redux/slices/users/usersSlices";
+import { uploadProfileImageAction } from "../../Redux/Slices/users/usersSlices";
 
 const UploadProfileImage = () => {
   //fetch categories
@@ -63,7 +63,7 @@ const UploadProfileImage = () => {
             <SuccesMsg message="Image uploaded successfully" />
           )}
           <h3 className="mb-7 text-base md:text-lg text-coolGray-500 font-medium text-center">
-           Profil resmi yükleyin veya güncelleyin
+            Profil resmi yükleyin veya güncelleyin
           </h3>
 
           <label className="mb-4 flex flex-col w-full">

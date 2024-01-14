@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 import { useParams } from "react-router-dom";
-import { fetchCategoriesAction } from "../../redux/slices/categories/categoriesSlice";
-import { updatePostAction } from "../../redux/slices/posts/postsSlice";
+import { fetchCategoriesAction } from "../../Redux/Slices/categories/categoriesSlice";
+import { updatePostAction } from "../../Redux/Slices/posts/postsSlice";
 import LoadingComponent from "../Alert/LoadingComponent";
 import ErrorMsg from "../Alert/ErrorMsg";
 import SuccesMsg from "../Alert/SuccesMsg";
@@ -23,9 +23,7 @@ const UpdatePost = () => {
     };
   });
   //! Get post from store
-  const {  error, loading, success } = useSelector(
-    (state) => state?.posts
-  );
+  const { error, loading, success } = useSelector((state) => state?.posts);
 
   useEffect(() => {
     dispatch(fetchCategoriesAction());

@@ -1,7 +1,7 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { FiCalendar } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
-import { shedulePostAction } from "../../redux/slices/posts/postsSlice";
+import { shedulePostAction } from "../../Redux/Slices/posts/postsSlice";
 import { useParams } from "react-router-dom";
 import LoadingComponent from "../Alert/LoadingComponent";
 import ErrorMsg from "../Alert/ErrorMsg";
@@ -30,7 +30,7 @@ const SchedulePost = () => {
     <div className="flex items-center justify-center h-screen bg-green-800">
       <div className="bg-white rounded-lg shadow-md p-6 w-96">
         <h1 className="text-2xl font-bold mb-4 text-green-500">
-         Çizelge Gönderi
+          Çizelge Gönderi
         </h1>
         <p className="mb-6 text-gray-600">
           Lütfen aşağıdaki tarih seçicisinden bir tarih seçin

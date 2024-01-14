@@ -62,8 +62,8 @@ const Register = () => {
         {/* success message */}
         {isRegistered && <SuccesMsg message="Register Success" />}
         <h3 className="mb-7 text-base md:text-lg text-coolGray-500 font-medium text-center">
-          İlgi alanlarınızı paylaşan benzer düşünen bireylerden oluşan bir dünyayı keşfedin,
-          Tutkular ve Hedefler
+          İlgi alanlarınızı paylaşan benzer düşünen bireylerden oluşan bir
+          dünyayı keşfedin, Tutkular ve Hedefler
         </h3>
         <label className="mb-4 flex flex-col w-full">
           <span className="mb-1 text-coolGray-800 font-medium">Username</span>
@@ -112,7 +112,7 @@ const Register = () => {
         <p className="text-sm text-coolGray-400 font-medium text-center">
           <span>Zaten hesabınız var mı? </span>
           <Link className="text-green-500 hover:text-green-600" to="/login">
-             Kayıt ol
+            Kayıt ol
           </Link>
         </p>
       </div>

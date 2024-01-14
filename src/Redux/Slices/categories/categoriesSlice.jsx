@@ -29,7 +29,7 @@ export const fetchCategoriesAction = createAsyncThunk(
   }
 );
 
-//! categories slices
+//! categories Slices
 const categoriesSlice = createSlice({
   name: "posts",
   initialState: INITIAL_STATE,

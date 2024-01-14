@@ -3,7 +3,7 @@ import {
   deletePostAction,
   getPostAction,
   posViewsCounttAction,
-} from "../../redux/slices/posts/postsSlice";
+} from "../../Redux/Slices/posts/postsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import ErrorMsg from "../Alert/ErrorMsg";
@@ -14,7 +14,7 @@ import AddComment from "../Comments/AddComment";
 const PostDetails = () => {
   //! navigation
   const navigate = useNavigate();
-  //! redux store
+  //! Redux store
   const dispatch = useDispatch();
   const { post, error, success } = useSelector((state) => state?.posts);
 

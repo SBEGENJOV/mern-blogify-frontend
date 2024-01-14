@@ -395,7 +395,7 @@ export const userViewsCounttAction = createAsyncThunk(
   }
 );
 
-//! Users slices
+//! Users Slices
 const usersSlice = createSlice({
   name: "users",
   initialState: INITIAL_STATE,

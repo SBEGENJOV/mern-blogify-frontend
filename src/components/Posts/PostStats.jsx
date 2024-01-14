@@ -5,7 +5,7 @@ import {
   clapPostAction,
   dislikePostAction,
   likePostAction,
-} from "../../redux/slices/posts/postsSlice";
+} from "../../Redux/Slices/posts/postsSlice";
 import PropTypes from "prop-types";
 
 const PostStats = ({

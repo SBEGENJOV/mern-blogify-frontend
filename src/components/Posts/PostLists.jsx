@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPrivatePostsAction,
   fetchPublicPostsAction,
-} from "../../redux/slices/posts/postsSlice";
+} from "../../Redux/Slices/posts/postsSlice";
 import LoadingComponent from "../Alert/LoadingComponent";
 import { Link, useNavigate } from "react-router-dom";
-import { fetchCategoriesAction } from "../../redux/slices/categories/categoriesSlice";
+import { fetchCategoriesAction } from "../../Redux/Slices/categories/categoriesSlice";
 import truncatePost from "../../utils/truncatePost";
 
 const PostLists = () => {
-  //! redux store
+  //! Redux store
   const dispatch = useDispatch();
   const { posts, error, loading, success } = useSelector(
     (state) => state?.posts

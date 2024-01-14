@@ -4,7 +4,7 @@ import { ExclamationTriangleIcon } from "@heroicons/react/20/solid";
 import {
   sendAccVerificationEmailAction,
   userPrivateProfileAction,
-} from "../../redux/slices/users/usersSlices";
+} from "../../Redux/Slices/users/usersSlices";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import UserPosts from "./UserPosts";
@@ -107,7 +107,7 @@ export default function PrivateUserProfile() {
                               </div>
                               <div className="ml-3">
                                 <h3 className="text-sm font-medium text-yellow-800">
-                                 Hesabınızı doğrulamak için buraya tıklayın
+                                  Hesabınızı doğrulamak için buraya tıklayın
                                 </h3>
                               </div>
                             </div>
@@ -197,7 +197,7 @@ export default function PrivateUserProfile() {
                   </dl>
                 </div>
                 {/* Posts Lists */}
-                <UserPosts  posts={profile?.user?.posts} />
+                <UserPosts posts={profile?.user?.posts} />
                 {/* Followers */}
                 <Followers followers={profile?.user?.followers} />
                 {/* Followed Users */}

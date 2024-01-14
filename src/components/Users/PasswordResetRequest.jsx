@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { forgotPasswordAction } from "../../redux/slices/users/usersSlices";
+import { forgotPasswordAction } from "../../Redux/Slices/users/usersSlices";
 import LoadingComponent from "../Alert/LoadingComponent";
 
 const PasswordResetRequest = () => {
@@ -42,8 +42,8 @@ const PasswordResetRequest = () => {
           Şifrenizi sıfırlayın
         </h1>
         <p className="text-gray-600 text-center mb-6">
-          E -posta adresinizi girin ve size sıfırlamak için size bir bağlantı gönderin
-          şifre.
+          E -posta adresinizi girin ve size sıfırlamak için size bir bağlantı
+          gönderin şifre.
         </p>
         {error && (
           <p className="text-red-600 text-center mb-6">{error?.message}</p>
@@ -69,7 +69,7 @@ const PasswordResetRequest = () => {
           <LoadingComponent />
         ) : (
           <button className="w-full px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none">
-           Sıfırlama Bağlantısı Gönder
+            Sıfırlama Bağlantısı Gönder
           </button>
         )}
       </div>

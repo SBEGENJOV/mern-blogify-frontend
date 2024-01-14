@@ -63,7 +63,7 @@ const Login = () => {
       <div className="container px-4 mx-auto">
         <div className="text-center max-w-md mx-auto">
           <h2 className="mb-4 text-6xl md:text-7xl text-center font-bold font-heading tracking-px-n leading-tight">
-           Hesabınıza giriş yapın
+            Hesabınıza giriş yapın
           </h2>
           <p className="mb-12 font-medium text-lg text-gray-600 leading-normal">
             Bilgilerinizi aşağıya girin.

@@ -271,7 +271,7 @@ export const shedulePostAction = createAsyncThunk(
   }
 );
 
-//! post slices
+//! post Slices
 const postSlice = createSlice({
   name: "posts",
   initialState: INITIAL_STATE,

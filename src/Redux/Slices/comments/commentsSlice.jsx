@@ -40,7 +40,7 @@ export const createCommentAction = createAsyncThunk(
   }
 );
 
-//! post slices
+//! post Slices
 const postSlice = createSlice({
   name: "posts",
   initialState: INITIAL_STATE,

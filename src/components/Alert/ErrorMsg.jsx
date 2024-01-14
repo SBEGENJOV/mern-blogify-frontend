@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { resetErrorAction } from "../../redux/slices/globalSlice/globalSlice";
+import { resetErrorAction } from "../../Redux/Slices/globalSlice/globalSlice";
 import { useDispatch } from "react-redux";
 const ErrorMsg = ({ message }) => {
   const dispatch = useDispatch();

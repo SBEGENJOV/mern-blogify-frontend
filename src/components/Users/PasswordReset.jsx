@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineLock } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { passwordResetAction } from "../../redux/slices/users/usersSlices";
+import { passwordResetAction } from "../../Redux/Slices/users/usersSlices";
 import { useParams } from "react-router-dom";
 import LoadingComponent from "../Alert/LoadingComponent";
 import SuccesMsg from "../Alert/SuccesMsg";
@@ -44,7 +44,7 @@ export const PasswordReset = () => {
     >
       <div className="w-96 p-6 bg-white rounded-xl shadow-md">
         <h1 className="text-3xl font-bold text-gray-700 text-center mb-6">
-       Şifrenizi sıfırlayın
+          Şifrenizi sıfırlayın
         </h1>
         {success && (
           <SuccesMsg message="Password Reset Was successful, login with yiur new password" />

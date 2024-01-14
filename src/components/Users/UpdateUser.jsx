@@ -1,8 +1,8 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineUser, AiOutlineMail } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import "tailwindcss/tailwind.css";
-import { updateUserProfileAction } from "../../redux/slices/users/usersSlices";
+import { updateUserProfileAction } from "../../Redux/Slices/users/usersSlices";
 import LoadingComponent from "../Alert/LoadingComponent";
 import ErrorMsg from "../Alert/ErrorMsg";
 import SuccesMsg from "../Alert/SuccesMsg";

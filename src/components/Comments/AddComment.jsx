@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CommentsList from "./CommentLists";
 import { useDispatch, useSelector } from "react-redux";
-import { createCommentAction } from "../../redux/slices/comments/commentsSlice";
+import { createCommentAction } from "../../Redux/Slices/comments/commentsSlice";
 import PropTypes from "prop-types";
 
 const AddComment = ({ postId, comments }) => {
@@ -38,8 +38,7 @@ const AddComment = ({ postId, comments }) => {
           <hr className="mt-5 border-gray-300" />
           <form className="mt-4" onSubmit={handleSubmit}>
             <div className="flex space-x-4">
-              <div className="flex-none">
-              </div>
+              <div className="flex-none"></div>
               <div className="flex-grow">
                 <div className="border rounded-lg shadow-sm">
                   <div className="p-3 border-b bg-gray-50">
