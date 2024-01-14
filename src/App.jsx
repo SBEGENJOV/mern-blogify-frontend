@@ -19,6 +19,7 @@ import AccountVerification from "./components/Users/AccountVerification";
 import PasswordResetRequest from "./components/Users/PasswordResetRequest";
 import PasswordReset from "./components/Users/PasswordReset";
 import UpdateUser from "./components/Users/UpdateUser";
+import SchedulePost from "./components/Posts/SchedulePost";
 
 export default function App() {
   const { userAuth } = useSelector((state) => state?.users);
@@ -129,6 +130,15 @@ export default function App() {
           element={
             <ProctedRoute>
               <UpdateUser />
+            </ProctedRoute>
+          }
+        ></Route>
+        {/* Schedule Post Route */}
+        <Route
+          path="/posts/schedule/:postId"
+          element={
+            <ProctedRoute>
+              <SchedulePost />
             </ProctedRoute>
           }
         ></Route>
