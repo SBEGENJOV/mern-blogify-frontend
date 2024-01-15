@@ -83,7 +83,16 @@ const PostLists = () => {
               ))}
             </div>
 
-            <div className="flex flex-wrap -mx-4 mb-12 md:mb-20">
+            <div
+              style={{
+                gridTemplateColumns: "repeat(auto-fill,minmax(20rem, 1fr)",
+                justifyContent: "center",
+                alignItems: "center",
+                display: "grid",
+                gap: "1rem",
+                textAlign:"center"
+              }}
+            >
               {/* loop */}
               {loading ? (
                 <div className="flex justify-center items-center h-full w-full">
@@ -164,7 +173,7 @@ const PostLists = () => {
               className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
               onClick={handlePrev}
             >
-              Önçeki
+              Önceki
             </button>
           )}
           {posts?.posts?.length > 0 && (
