@@ -3,7 +3,7 @@ import Homepage from "./components/Homepage/Homepage";
 import Login from "./components/Users/Login";
 import PublicNavbar from "./components/Navbar/PublicNavbar";
 import PrivateNavbar from "./components/Navbar/PrivateNavbar";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ProctedRoute from "./components/AuthRoute/ProctedRoute";
 import PublicPosts from "./components/Posts/PublicPosts";
 import AddPost from "./components/Posts/AddPost";
@@ -20,13 +20,25 @@ import PasswordResetRequest from "./components/Users/PasswordResetRequest";
 import PasswordReset from "./components/Users/PasswordReset";
 import UpdateUser from "./components/Users/UpdateUser";
 import SchedulePost from "./components/Posts/SchedulePost";
+import { logoutAction } from "./Redux/Slices/Users/usersSlices";
 
 export default function App() {
   const { userAuth } = useSelector((state) => state?.users);
   const isLogin = userAuth?.userInfo?.token;
+  const istoken = userAuth?.error;
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch(logoutAction());
+    //Sayfayı yenileme
+    window.location.reload();
+  };
   return (
     <BrowserRouter>
-      {isLogin ? <PrivateNavbar /> : <PublicNavbar />}
+      {isLogin ? (
+        <PrivateNavbar />
+      ) : (
+        <>{istoken === null ? <PublicNavbar /> : logoutHandler}</>
+      )}
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/login" element={<Login />}></Route>
