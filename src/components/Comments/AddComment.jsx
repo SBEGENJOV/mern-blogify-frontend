@@ -8,21 +8,27 @@ const AddComment = ({ postId, comments }) => {
   const [formData, setFormData] = useState({
     message: "",
   });
-  //dispatch
+  const [localComments, setLocalComments] = useState(comments);
+
   const dispatch = useDispatch();
-  // ! Handle change
+  const { success } = useSelector((state) => state?.comments);
+
+  useEffect(() => {
+    if (success) {
+      // Yeni bir yorum eklendiğinde yerel yorumları güncelle
+      setLocalComments((prevComments) => [
+        ...prevComments,
+        { message: formData.message },
+      ]);
+      // Formu sıfırla
+      setFormData({ message: "" });
+    }
+  }, [dispatch, success]); // formData.message ve localComments'u bağımlılıklardan çıkardık
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  //! get comment from store
-  const { success } = useSelector((state) => state?.comments);
-  //reload
-  useEffect(() => {
-    if (success) {
-      window.location.reload();
-    }
-  }, [dispatch, success]);
-  //! handle submit
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createCommentAction({ ...formData, postId }));
@@ -75,7 +81,7 @@ const AddComment = ({ postId, comments }) => {
         </div>
       </div>
       {/* comment lists */}
-      <CommentsList comments={comments} />
+      <CommentsList comments={localComments} />
     </div>
   );
 };
