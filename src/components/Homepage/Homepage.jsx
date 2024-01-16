@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import PublicPosts from "../Posts/PublicPosts";
 import RegisterTemplate from "../Users/Register";
+import Footer from "../Footer/footer";
 
 const Homepage = () => {
   const { userAuth } = useSelector((state) => state?.users);
@@ -77,6 +78,7 @@ const Homepage = () => {
         </div>
       </section>
       <PublicPosts />
+      <Footer/>
     </div>
   );
 };

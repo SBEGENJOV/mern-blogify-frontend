@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { PlusIcon } from "@heroicons/react/20/solid";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaBlog } from "react-icons/fa";
 import { logoutAction } from "../../Redux/Slices/Users/usersSlices";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +12,7 @@ function classNames(...classes) {
 }
 
 export default function PrivateNavbar() {
+  const navigate = useNavigate();
   const { userAuth } = useSelector((state) => state?.users);
   //!dispatch
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ export default function PrivateNavbar() {
     dispatch(logoutAction());
     //Sayfayı yenileme
     window.location.reload();
+    navigate("/");
   };
   return (
     <Disclosure as="nav" className="bg-white shadow">

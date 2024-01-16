@@ -23,22 +23,18 @@ import SchedulePost from "./components/Posts/SchedulePost";
 import { logoutAction } from "./Redux/Slices/Users/usersSlices";
 
 export default function App() {
-  const { userAuth } = useSelector((state) => state?.users);
+  const { userAuth, error } = useSelector((state) => state?.users);
   const isLogin = userAuth?.userInfo?.token;
-  const istoken = userAuth?.error;
   const dispatch = useDispatch();
-  const logoutHandler = () => {
+  if (error?.message === "Geçersiz token") {
     dispatch(logoutAction());
     //Sayfayı yenileme
     window.location.reload();
-  };
+  }
+  console.log(error?.message);
   return (
     <BrowserRouter>
-      {isLogin ? (
-        <PrivateNavbar />
-      ) : (
-        <>{istoken === null ? <PublicNavbar /> : logoutHandler}</>
-      )}
+      {isLogin ? <PrivateNavbar /> : <PublicNavbar />}
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/login" element={<Login />}></Route>
