@@ -31,7 +31,6 @@ export default function App() {
     //Sayfayı yenileme
     window.location.reload();
   }
-  console.log(error?.message);
   return (
     <BrowserRouter>
       {isLogin ? <PrivateNavbar /> : <PublicNavbar />}
@@ -70,7 +69,7 @@ export default function App() {
         ></Route>
         {/* Ana sayfa postlar */}
         <Route
-          path="/posts"
+          path="https://sbegenjov-blog.onrender.com/posts"
           element={
             <ProctedRoute>
               <PostLists />
