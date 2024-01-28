@@ -69,7 +69,7 @@ export default function App() {
         ></Route>
         {/* Ana sayfa postlar */}
         <Route
-          path="sbegenjov-blog.onrender.com/posts"
+          path="/posts"
           element={
             <ProctedRoute>
               <PostLists />
